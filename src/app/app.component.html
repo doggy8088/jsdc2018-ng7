@@ -1,20 +1,54 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<section class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <input class="new-todo" placeholder="What needs to be done?" autofocus />
+  </header>
+  <!--
+    This section should be hidden by default and shown when there are todos
+  -->
+  <section class="main">
+    <input id="toggle-all" class="toggle-all" type="checkbox" />
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list">
+      <!-- These are here just to show the structure of the list items -->
+      <!--
+        List items should get the class `editing` when editing and `completed` when marked as completed
+      -->
+      <li class="completed">
+        <div class="view">
+          <input class="toggle" type="checkbox" checked />
+          <label>Taste JavaScript</label> <button class="destroy"></button>
+        </div>
+        <input class="edit" value="Create a TodoMVC template" />
+      </li>
+      <li>
+        <div class="view">
+          <input class="toggle" type="checkbox" /> <label>Buy a unicorn</label>
+          <button class="destroy"></button>
+        </div>
+        <input class="edit" value="Rule the web" />
+      </li>
+    </ul>
+  </section>
+  <!-- This footer should hidden by default and shown when there are todos -->
+  <footer class="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="todo-count"> <strong>0</strong> item left</span>
+    <!-- Remove this if you don't implement routing -->
+    <ul class="filters">
+      <li><a class="selected" href="#/">All</a></li>
+      <li><a href="#/active">Active</a></li>
+      <li><a href="#/completed">Completed</a></li>
+    </ul>
+    <!-- Hidden if no completed items are left ↓ -->
+    <button class="clear-completed">Clear completed</button>
+  </footer>
+</section>
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <!-- Remove the below line ↓ -->
+  <p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+  <!-- Change this out with your name and url ↓ -->
+  <p>Created by <a href="http://todomvc.com">you</a></p>
+  <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+</footer>
