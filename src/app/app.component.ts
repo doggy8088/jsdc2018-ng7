@@ -42,12 +42,21 @@ export class AppComponent {
   }
 
   addItem() {
-    this.data = [...this.data, {
-      id: 4,
-      title: this.item,
-      isDone: false
-    }];
+    this.data = [
+      ...this.data,
+      {
+        id: 4,
+        title: this.item,
+        isDone: false
+      }
+    ];
     this.item = '';
   }
 
+  get itemsLeft() {
+    return this.data.reduce(
+      (prev, curr) => (!curr.isDone ? prev + 1 : prev),
+      0
+    );
+  }
 }
