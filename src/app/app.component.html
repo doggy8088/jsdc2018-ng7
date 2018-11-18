@@ -20,7 +20,9 @@
           <input class="toggle" type="checkbox" [checked]="item.isDone" (change)="markDone(item.id)" />
           <label>{{item.title}}</label> <button class="destroy" (click)="removeItem(item.id)"></button>
         </div>
-        <input class="edit" [value]="item.title" #edit (keyup.escape)="cancelEdit(item.id)" (keyup.enter)="editItem(item.id, edit.value)" />
+        <input class="edit" [value]="item.title" #edit
+          appAutofocus
+          (keyup.escape)="cancelEdit(item.id)" (keyup.enter)="editItem(item.id, edit.value)" />
       </li>
     </ul>
   </section>
