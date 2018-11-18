@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FooterInfoComponent } from './footer-info/footer-info.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterInfoComponent
+    FooterInfoComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

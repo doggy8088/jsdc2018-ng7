@@ -33,6 +33,7 @@ export class AppComponent {
       isDone: true
     }
   ];
+  filterType = '';
 
   markDone(id: number) {
     this.data = this.data.map(v => {
