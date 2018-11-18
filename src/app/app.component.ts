@@ -72,4 +72,35 @@ export class AppComponent {
   clearCompleted() {
     this.data = this.data.filter(v => !v.isDone);
   }
+
+  setEditMode(id: number) {
+    this.data = this.data.map((v: any) => {
+      if (v.id === id) {
+        v = Object.assign({}, v);
+        v.editing = true;
+      }
+      return v;
+    });
+  }
+
+  editItem(id: number, item: string) {
+    this.data = this.data.map((v: any) => {
+      if (v.id === id) {
+        v = Object.assign({}, v);
+        v.title = item;
+        delete v.editing;
+      }
+      return v;
+    });
+  }
+
+  cancelEdit(id: number) {
+    this.data = this.data.map((v: any) => {
+      if (v.id === id) {
+        v = Object.assign({}, v);
+        delete v.editing;
+      }
+      return v;
+    });
+  }
 }
