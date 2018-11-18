@@ -50,10 +50,17 @@ export class AppComponent {
   }
 
   addItem() {
+    if (!this.item) {
+      return;
+    }
+    let newId = 1;
+    if (this.data.length > 0) {
+      newId = this.data[this.data.length - 1].id + 1;
+    }
     this.data = [
       ...this.data,
       {
-        id: 4,
+        id: newId,
         title: this.item,
         isDone: false
       }
