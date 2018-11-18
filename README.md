@@ -1,27 +1,20 @@
-# Demo1
+# JSDC 2018 - Angular 7 Workshop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+本專案是 [JSDC 2018](http://2018.jsdc.tw/)【體驗 Angular 7 極速開發】Workshop 的 Repo 內容，詳細記載開發過程所寫的原始碼變更紀錄。
 
-## Development server
+## 開發說明
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```sh
+git clone https://github.com/doggy8088/jsdc2018-ng7.git
+cd jsdc2018-ng7
+npm install
+npm start
+```
 
-## Code scaffolding
+瀏覽到 `http://localhost:4200/` 即可查看執行結果。
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 建置部署
 
-## Build
+執行 `ng build --prod` 即可建置出可部署的網站檔案，輸出結果會在 `dist/` 目錄下。
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+如果要發佈到 GitHub Pages 則必須加上 `--base-href /jsdc2018-ng7/` 參數，確保相對路徑正確。
