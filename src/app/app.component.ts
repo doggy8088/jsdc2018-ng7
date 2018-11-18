@@ -59,11 +59,16 @@ export class AppComponent {
     ];
     this.item = '';
   }
+
   checkAll() {
     this.data = this.data.map(v => {
       v = Object.assign({}, v);
       v.isDone = this.itemsLeft === 0 ? false : true;
       return v;
     });
+  }
+
+  clearCompleted() {
+    this.data = this.data.filter(v => !v.isDone);
   }
 }
