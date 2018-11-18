@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  get itemsLeft(): number {
+    return this.data.reduce(
+      (prev, curr) => (!curr.isDone ? prev + 1 : prev),
+      0
+    );
+  }
+
   appname = '待辦事項';
   inputhint = '請輸入工作';
   item;
@@ -52,11 +59,11 @@ export class AppComponent {
     ];
     this.item = '';
   }
-
-  get itemsLeft() {
-    return this.data.reduce(
-      (prev, curr) => (!curr.isDone ? prev + 1 : prev),
-      0
-    );
+  checkAll() {
+    this.data = this.data.map(v => {
+      v = Object.assign({}, v);
+      v.isDone = this.itemsLeft === 0 ? false : true;
+      return v;
+    });
   }
 }

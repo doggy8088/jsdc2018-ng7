@@ -8,7 +8,7 @@
     This section should be hidden by default and shown when there are todos
   -->
   <section class="main">
-    <input id="toggle-all" class="toggle-all" type="checkbox" />
+    <input id="toggle-all" class="toggle-all" type="checkbox" [checked]="0 === itemsLeft" (change)="checkAll()" />
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
       <!-- These are here just to show the structure of the list items -->
